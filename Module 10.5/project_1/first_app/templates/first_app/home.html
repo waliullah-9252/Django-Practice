@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is first app home page !</h1>
+
+    <h1>Author : {{author}}</h1>
+    <h1>Age : {{age}}</h1>
+
+    <h3>{{ List | join:" " }}</h3>
+    <h3>{{ today | date:"D d M Y" }}</h3>
+    <h3>{{ today |date:"SHORT_DATE_FORMAT" }}</h3>
+    <h3>{{ today | date }}</h3>
+    {% comment %} <h3>{{ value | default: "nothing here" }}</h3> {% endcomment %}
+    <h3>{{ value | add:" Now start to learn" }}</h3>
+    <h3>{{ value | capfirst }}</h3>
+    <h3>{{ value | cut:" " }}</h3>
+    <h3>{{ value | cut:"-" }}</h3>
+    <h3>{{ student | dictsort:"name" }}</h3>
+    <h3>{{ List | first }}</h3>
+    <h3>{{ List | last }}</h3>
+    <h3>{{ List | length }}</h3>
+    <h3>{{ value | linenumbers }}</h3>
+    <h3>{{ val | lower }}</h3>
+    <h3>{{ value | upper }}</h3>
+    <h3>{{ value | title }}</h3>
+    <h3>{{ List | random }}</h3>
+    <h3>{{ List | slice:":2" }}</h3>
+    <h3>{{ today | time:"H:i" }}</h3>
+    <h3>{{ today | timesince }}</h3>
+    <h3>{{ value | truncatechars:8 }}</h3>
+    <h3>{{ value | wordcount }}</h3>
+    <h3>{{ value | truncatewords:2 }}</h3>
+    <h3>{{ value | striptags }}</h3>
+    <h3>{{ value | make_list }}</h3>
+    <h3>{{ size | filesizeformat }}</h3>
+
+
+    {% comment %} conditional statement {% endcomment %}
+    {% if age >= 20 %}
+        <h4>You get a driving licence</h4>
+    {% elif age >= 10 and age <= 19 %}
+        <h4>You not get a driving licence</h4>
+    {% else %}
+        <h4>You're a child</h4>
+    {% endif %} 
+
+    {% comment %} for loop here {% endcomment %}
+
+    {% for i in student %}
+        <h4>{{i.name}} {{i.age}}</h4>
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
