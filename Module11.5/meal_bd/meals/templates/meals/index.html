@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<h1 class="container bg-danger w-25 text-white text-center rounded-4 fw-bold mb-3">Meal Details</h1>
+<div class="container ">
+    <div class="row d-flex justify-content-center">
+        {% for i in meals %}
+            <div class="card col-md-3 mb-3 ms-3 ">
+                <img src="{{i.strMealThumb}}" class="card-img-top w-100 mt-2" alt="food image" />
+                <div class="card-body">
+                    <h5 class="card-title">{{i.strMeal}}</h5>
+                    <p class="card-text">
+                        BeaverTails are deep-fried dough pastries that are stretched to resemble the shape of a beaver's tail. So don't worry, no part of actual beavers are used!
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
