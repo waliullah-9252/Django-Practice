@@ -10,6 +10,13 @@ class StudentModel(models.Model):
     date_field = models.DateField(null=True)
     big_integer_field = models.BigIntegerField( null=True)
     binary_field = models.BinaryField(null = True)
+    # update code 12-12-2023
+    time_field = models.TimeField(null=True)
+    url_field = models.URLField(null=True)
+    uuid_field = models.UUIDField(null=True)
+    slug_field = models.SlugField(null=True)
+    positive_integer_field = models.PositiveIntegerField(null=True)
+
 
 
     def __str__(self):
