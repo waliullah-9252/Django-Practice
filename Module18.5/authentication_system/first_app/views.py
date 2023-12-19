@@ -49,6 +49,7 @@ def user_logout(request):
     logout(request)
     return redirect('homepage')
 
+
 def user_profile(request):
     if request.user.is_authenticated:
         if request.method == 'POST':

@@ -1,0 +1,39 @@
+{% extends "base.html" %} 
+{% block content %}
+<h1 class="mt-3 bg-danger text-white w-25 m-auto text-center rounded-5">Show all Data</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Musician Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Instrument Type</th>
+      <th scope="col">Album Name</th>
+      <th scope="col">Album Rating</th>
+      <th scope="col">Release Date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for musi in musician %}
+      {% for al in album %}
+        {% if al.musician.id == musi.id %}
+          <tr>
+            <td>{{ musi.id }}</td> 
+            <td><a href="{% url 'edit_musician' musi.id %}" class="text-decoration-none">{{ musi.first_name }} {{ musi.last_name }}</a></td> 
+            <td>{{ musi.email }}</td> 
+            <td>{{ musi.instrument_type }}</td>
+            <td>{{ al.album_name }}</td>
+            <td>{{ al.rating }}</td>
+            <td>{{ al.album_relased_date }}</td>
+            <td>
+              <a href="{% url 'edit_album' al.id %}" class="btn btn-warning btn-small">Edit</a>
+              <a href="{% url 'delete_album' al.id %}" class="btn btn-danger btn-small">Delete</a>
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
